@@ -2,31 +2,30 @@ import { Request, Response } from "express";
 import { CrudController } from "../CrudController";
 
 export class UserController extends CrudController {
-    public create(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    
+    //post
+    public create(req: Request, res: Response): void {
         throw new Error("Method not implemented.");
     }
 
-    public read(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        res.json({ message: 'GET /user request received' });
+    //get
+    public read(req: Request, res: Response): void {
+        res.json({ message: 'GET / user request received \n200 (OK), list of customers. Use pagination, sorting and filtering to navigate big lists.' });
     }
 
-    public update(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    //update \\ replace
+    public replace(req: Request, res: Response): void {
+        throw new Error("Method not implemented.");
+    }
+    
+    //update \\ modify
+    public modify(req: Request, res: Response): void {
         throw new Error("Method not implemented.");
     }
 
-    public delete(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
+    //update \\ modify    
+    public delete(req: Request, res: Response): void {
         throw new Error("Method not implemented.");
     }
-
-    public get(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public post(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
-
-    public put(req: Request<import("express-serve-static-core").ParamsDictionary>, res: Response): void {
-        throw new Error("Method not implemented.");
-    }
+    
 }

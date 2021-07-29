@@ -1,6 +1,6 @@
 import express from 'express';
 import { PORT } from './Server/Config/Constants';
-import { userRouter } from './Server/Routes';
+import { userRouter, homeRouter } from './Server/Routes';
 
 const app = express();
 // app.use(express.json());
@@ -11,11 +11,13 @@ function main(){
 
     //define routes
     app.use('/users', userRouter)  
-    
+    app.use('/', homeRouter)
+
     //set port
     app.listen(PORT, () => {
         console.log(`Server listening on port ${PORT}`);
     });
 }
+
 
 main();
