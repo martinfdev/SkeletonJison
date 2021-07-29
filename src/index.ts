@@ -1,11 +1,21 @@
 import express from 'express';
-import { PORT } from './Server/Config/Constants'
+import { PORT } from './Server/Config/Constants';
+import { userRouter } from './Server/Routes';
 
 const app = express();
-app.use(express.json());
+// app.use(express.json());
 
-// app.use(express.static('Server/Client'));
+function main(){
+    //format to json
+    app.use(express.json());
 
-app.listen(PORT, () => { 
-  console.log(`Server running on port ${PORT}`);
-});
+    //define routes
+    app.use('/users', userRouter)  
+    
+    //set port
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
+
+main();
