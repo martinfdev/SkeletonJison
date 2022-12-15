@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "name": "skeletonjison",
   "description": "The skeleton parser is a JavaScript parser generator that is designed to be easy to use, to understand, and to modify.",
